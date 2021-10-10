@@ -30,7 +30,6 @@ static void InitializeFlipper(UIApplication *application) {
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
-
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"ExpoModulesExample"
@@ -47,7 +46,14 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [super application:application didFinishLaunchingWithOptions:launchOptions];
   return YES;
+}
+
+- (NSArray<id<RCTBridgeModule>> *)extraModulesForBridge:(RCTBridge *)bridge
+{
+    // If you'd like to export some custom RCTBridgeModules that are not Expo modules, add them here!
+    return @[];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
