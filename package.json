@@ -10,9 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "expo": "^43.0.0-beta.3",
     "react": "17.0.2",
-    "react-native": "0.66.0",
-    "react-native-unimodules": "^0.14.8"
+    "react-native": "0.66.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
